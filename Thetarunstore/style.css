@@ -1,0 +1,535 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Button */
+.dropbtn {
+    background: none;
+    border: none;
+    font-size: 11px;
+    cursor: pointer;
+    letter-spacing: 3px;
+}
+
+/* Dropdown list (hidden by default) */
+ .dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #fff;
+    width: 300px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Sale special style */
+.dropdown-content a.sale {
+    color: red;
+    font-weight: bold;
+}
+
+/* Section headers */
+.dropdown-content .section {
+    font-weight: bold;
+    padding: 10px 15px 5px;
+    cursor: default;
+}
+
+.overlay {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    padding: 10px;
+    transition: bottom 0.4s ease;
+}
+.product-image:hover .overlay {
+    bottom: 0;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 40px;
+    height: 80px;
+}
+.nav-left {
+    display: flex;
+    gap: 25px;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+.nav-left i {
+    padding-left: 8px;
+}
+.nav-left a,
+.nav-right a {
+    font-size: 11px;
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+.nav-left a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: black;
+    transition: 0.5s ease;
+}
+.nav-left a:hover::after {
+    width: 100%;
+}
+.logo img {
+    height: 40px;
+    padding-right: 100px;
+}
+.nav-right {
+    display: flex;
+    gap: 15px;
+    font-size: 11px;
+    align-items: center;
+    letter-spacing: 2px;
+}
+
+.nav-right input {
+    width: 200px;
+}
+.nav-right i {
+    padding-right: 6px;
+    font-size: 13px;
+}
+.nav-right input {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* Hero */
+.hero-section {
+    background-image: url("./image/Shirts_Banner.webp");
+    height: 330px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Products Section */
+.products-msg {
+    height: 138.6px;
+}
+.products-msg p {
+    padding: 20px 40px;
+    font-size: 29px;
+}
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px 50px;
+}
+.product-card {
+    font-family: "Roboto", sans-serif;
+}
+.product-image {
+    position: relative;
+    overflow: hidden;
+}
+.product-image img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+.add-btn {
+    display: block;
+    margin: 5px auto;
+    color: #1c1d1d;
+    border: none;
+    padding: 6px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.sizes {
+    margin-top: 8px;
+}
+.sizes span {
+    margin: 0 4px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #1c1d1d;
+}
+.product-info {
+    margin-top: 10px;
+}
+.product-info h3 {
+    font-size: 14px;
+    margin: 5px 0;
+}
+.product-info p {
+    font-size: 14px;
+    margin: 2px 0;
+}
+.price {
+    font-size: 8px;
+    color: #1c1d1d;
+}
+
+/* Cart */
+#cart {
+    display: none;
+    position: fixed;
+    right: 20px;
+    top: 80px;
+    width: 300px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    z-index: 1000;
+}
+.cart-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+/* Login Modal */
+#login-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+.login-box {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.login-box h2 {
+    margin-top: 0;
+    font-size: 18px;
+    text-align: center;
+}
+.login-box input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.login-box button {
+    width: 100%;
+    padding: 8px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.login-box button:hover {
+    background: #444;
+}
+
+.close-btn {
+    float: right;
+    cursor: pointer;
+}
+
+
+
+.results-end-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px; /* Adjust based on your layout */
+}
+
+.results-end-box {
+  background-color: #000;
+  padding: 10px 20px;
+}
+
+.results-end-text {
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: 1px solid #333;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+
+footer {
+    background-color: white;
+    padding: 40px 20px;
+    text-align: center;
+    color: #333;
+    border-top: 0.1px solid #333;
+}
+
+
+.section-msg{
+    height: 132px;
+}
+
+.footer-section {
+    margin-bottom: 10px;
+}
+
+.section {
+    font-size: 12px;
+    margin-bottom: 20px;
+    /* text-align: center; */
+    color: #070707;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    margin-bottom: 40px;
+}
+
+.footer-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.para{
+    font-size: 24.65px;
+    letter-spacing: 2px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.tags span {
+    cursor: pointer;
+}
+
+.signup input[type="email"] {
+    padding: 10px;
+    margin-top: 10px;
+    width: 250px;
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.signup button {
+    display: block;
+    margin: 15px auto 0;
+    padding: 12px 30px;
+    background-color: #000;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.social a {
+    margin: 0 10px;
+    color: #000;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.app-download img {
+    width: 150px;
+    margin: 10px;
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 12px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+.back-to-top i {
+    font-size: 16px;
+}
+
+
+
+@media (max-width:786px) {
+    .hero-section {
+    background-image: url("./image/Shirts_Banner.webp");
+    height: 191.51px;
+    background-size: cover;
+    background-position: center;
+}
+}
+
+/* Tablets - 768px and below */
+/* @media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .nav-left,
+  .nav-right {
+    flex-direction: column;
+    width: 768px;
+    gap: 10px;
+  }
+
+  .nav-left a,
+  .nav-right a {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .logo {
+    align-self: center;
+    margin: 10px 0;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr); /* 2 products per row
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+
+  .app-buttons img {
+    width: 150px;
+  }
+} */
+
+/* Phones - 425px and below 
+@media (max-width: 425px) {
+  .nav-left,
+  .nav-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-left a,
+  .nav-right a {
+    font-size: 14px;
+  }
+
+  #search {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .dropbtn {
+    width: 100%;
+    text-align: left;
+  }
+
+  .dropdown-content {
+    position: static;
+    display: none;
+    background-color: #f9f9f9;
+    width: 100%;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  .products {
+    grid-template-columns: 1fr; /* 1 product per row 
+  }
+
+  .app-buttons img {
+    width: 130px;
+    margin: 5px 0;
+  }
+
+  .back-to-top {
+    right: 10px;
+    bottom: 10px;
+    padding: 8px 12px;
+  }
+
+  .footer-container {
+    padding: 20px;
+  }
+
+  .footer-section h2 {
+    font-size: 16px;
+  }
+}*/
+
