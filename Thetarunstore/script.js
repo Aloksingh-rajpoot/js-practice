@@ -167,7 +167,7 @@ function renderProducts(list = products) {
 function selectSize(productId, size) {
   const product = products.find((p) => p.id === productId);
   product.selectedSize = size;
-  alert(`${product.title} size ${size} selected!`);
+  // alert(`${product.title} size ${size} selected!`);
 }
 
 function addToCart(id) {
