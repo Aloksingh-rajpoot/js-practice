@@ -4,132 +4,127 @@ const products = [
     title: "HIROTO",
     price: 1699,
     img: "./image/shirt-1.png",
-    description:
-      "Orange Solid Slim Fit ...",
+    description: "Orange Solid Slim Fit ...",
   },
   {
     id: 2,
     title: "CONDUI",
     price: 1899,
     img: "./image/shirt-2.png",
-    description:
-      "Green & White Herringb..."
+    description: "Green & White Herringb...",
   },
   {
     id: 3,
     title: " WURKO ",
     price: 1899,
     img: "./image/shirt-3.png",
-    description:
-      "Cream Herringbone Wove..."
+    description: "Cream Herringbone Wove...",
   },
   {
     id: 4,
     title: " SCENE ",
     price: 1899,
     img: "./image/shirt-4.png",
-    description:
-      "Cream Crew Neck Graphi..."
+    description: "Cream Crew Neck Graphi...",
   },
   {
     id: 5,
     title: " PING ",
     price: 1899,
     img: "./image/shirt-5.png",
-    description:
-      "Cream Crew Neck Graphi..."
+    description: "Cream Crew Neck Graphi...",
   },
   {
     id: 6,
     title: " BHERO ",
     price: 1899,
     img: "./image/shirt-6.png",
-    description:
-      "Beige Cotton Solid Sli..."
+    description: "Beige Cotton Solid Sli...",
   },
   {
     id: 7,
     title: " GIJOL ",
     price: 1899,
     img: "./image/tshirt-2.png",
-    description:
-      "Black Geometric Textur..."
+    description: "Black Geometric Textur...",
   },
   {
     id: 8,
     title: " GENACH ",
     price: 1899,
     img: "./image/tshirt-1.png",
-    description:
-      "Brown Geometric Textur..."
+    description: "Brown Geometric Textur...",
   },
   {
     id: 9,
     title: " GENACH ",
     price: 1899,
     img: "./image/hoodie-1.png",
-    description:
-      "Brown Geometric Textur..."
+    description: "Brown Geometric Textur...",
   },
   {
     id: 10,
     title: " GENACH ",
     price: 1899,
     img: "./image/hoodie-2.png",
-    description:
-      "Brown Geometric Textur..."
+    description: "Brown Geometric Textur...",
   },
   {
     id: 11,
     title: " GENACH ",
     price: 1899,
     img: "./image/hoodie-3.png",
-    description:
-      "Brown Geometric Textur..."
+    description: "Brown Geometric Textur...",
   },
   {
     id: 12,
     title: "HIDKO",
     price: 1899,
     img: "./image/tshirt-3.png",
-    description:
-      "Green Solid Relaxed Fi..."
+    description: "Green Solid Relaxed Fi...",
   },
   {
     id: 13,
     title: " BRAG ",
     price: 1899,
     img: "./image/tshirt-4.png",
-    description:
-      "Cream Crew Neck Graphi..."
+    description: "Cream Crew Neck Graphi...",
   },
   {
     id: 14,
     title: " TAPA ",
     price: 1899,
     img: "./image/tshirt-5.png",
-    description:
-      "Cream Crew Neck Graphi..."
+    description: "Cream Crew Neck Graphi...",
   },
   {
     id: 15,
     title: " MIGO ",
     price: 1899,
     img: "./image/tshirt-6.png",
-    description:
-      "Navy Crew Neck Graphic..."
+    description: "Navy Crew Neck Graphic...",
   },
   {
     id: 16,
     title: " BOH ",
     price: 1899,
     img: "./image/tshirt-7.png",
-    description:
-      "Olive Oversized Crew N..."
+    description: "Olive Oversized Crew N...",
   },
-
-
 ];
+
+window.addEventListener("scroll", function () {
+  const navbar = document.getElementById("navbar");
+
+  // Set scroll point when navbar becomes fixed
+  const scrollTrigger = 100;
+
+  if (window.scrollY >= scrollTrigger) {
+    navbar.classList.add("fixed");
+  } else {
+    navbar.classList.remove("fixed");
+  }
+});
 
 let cart = [];
 
@@ -172,7 +167,7 @@ function selectSize(productId, size) {
 
 function addToCart(id) {
   const product = products.find((p) => p.id === id);
-  const size = product.selectedSize || "M";
+  const size = product.selectedSize || "M"; // fallback
   const existing = cart.find((c) => c.id === id && c.size === size);
   if (existing) {
     existing.qty++;
