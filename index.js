@@ -1027,23 +1027,23 @@ export default function AmazonClone() {
 //   console.log("car is moving")
 // }
 
-function onePlusAVG(x, y) {
-  return 1 + (x + y) / 2;
-}
-function checkAge(age) {
-  if (age > 18) {
-    return true;
-  } else {
-    return confirm("Did parents allow you?");
-  }
-}
+// function onePlusAVG(x, y) {
+//   return 1 + (x + y) / 2;
+// }
+// function checkAge(age) {
+//   if (age > 18) {
+//     return true;
+//   } else {
+//     return confirm("Did parents allow you?");
+//   }
+// }
 
-function car(()=>{
-  compuny:"Toyota",
-  model:"fortunr"
-})
-function drive(){
-  console.log{"car start" car}
-}
+// function car(()=>{
+//   compuny:"Toyota",
+//   model:"fortunr"
+// })
+// function drive(){
+//   console.log{"car start" car}
+// }
 
-drive()
+// drive()

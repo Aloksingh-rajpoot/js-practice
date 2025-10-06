@@ -1,0 +1,101 @@
+    * {
+      margin: 0;
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+      background-color:#0ab4c6;
+    }
+
+    h1 {
+      background-color: #081b31;
+      color: #fff;
+      height: 5rem;
+      line-height: 5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .choices {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5rem;
+      margin-top: 5rem
+    }
+
+    .choice {
+      height: 165px;
+      width: 165px;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+
+    .choice:hover {
+      cursor: pointer;
+      background-color: #081b31;
+    }
+
+    p {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+
+    img {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+    }
+
+    .score-board {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      margin-top: 5rem;
+      gap: 2rem;
+    }
+
+    #comp-score,
+    #user-score {
+      font-size: 4rem;
+    }
+
+    .msg-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    #msg {
+      background-color: #081b31;
+      color: white;
+      font-size: 2rem;
+      display: inline;
+      padding: 1rem;
+      border-radius: 2rem;
+    }
+
+    /* Reset Button Styling */
+    .reset-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    #reset-btn {
+      background-color: #ff4757;
+      color: white;
+      font-size: 1.5rem;
+      padding: 0.7rem 2rem;
+      border: none;
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #reset-btn:hover {
+      background-color: #e84118;
+    }
